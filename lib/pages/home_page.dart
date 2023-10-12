@@ -63,6 +63,32 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: pages[currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: currentIndex,
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+          type: BottomNavigationBarType.fixed,
+          items: const [
+            BottomNavigationBarItem(
+                icon: Icon(IconlyLight.home),
+                activeIcon: Icon(IconlyBold.home),
+                label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(IconlyLight.call),
+                activeIcon: Icon(IconlyBold.call),
+                label: 'Services'),
+            BottomNavigationBarItem(
+                icon: Icon(IconlyLight.buy),
+                activeIcon: Icon(IconlyBold.buy),
+                label: 'Cart'),
+            BottomNavigationBarItem(
+                icon: Icon(IconlyLight.profile),
+                activeIcon: Icon(IconlyBold.profile),
+                label: 'Profile'),
+          ]),
     );
   }
 }
