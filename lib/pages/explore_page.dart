@@ -50,9 +50,30 @@ class ExplorePages extends StatelessWidget {
               padding: const EdgeInsets.all(12.0),
               child: Row(
                 children: [
-                  Column(
-                    children: [Text("Free Consultation")],
-                  )
+                  Flexible(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Free Consultation",
+                          style:
+                              Theme.of(context).textTheme.titleLarge!.copyWith(
+                                    color: Colors.green.shade700,
+                                  ),
+                        ),
+                        Text('Get free support from our customer service'),
+                        FilledButton(
+                          onPressed: () {},
+                          child: Text('Call now'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Image.asset(
+                    'lib/assets/support.png',
+                    width: 75,
+                  ),
                 ],
               ),
             ),
