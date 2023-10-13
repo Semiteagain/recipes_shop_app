@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:recipes_shop_app/widget/product_card.dart';
 
 class ExplorePages extends StatelessWidget {
   const ExplorePages({super.key});
@@ -107,11 +108,10 @@ class ExplorePages extends StatelessWidget {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 16,
+              childAspectRatio: 0.9,
             ),
             itemBuilder: (context, index) {
-              return const Card(
-                child: Text("Hi"),
-              );
+              return const ProductCard();
             })
       ],
     ));
