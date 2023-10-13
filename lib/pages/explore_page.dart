@@ -40,45 +40,79 @@ class ExplorePages extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
-          height: 170,
-          child: Card(
-            color: Colors.green.shade50,
-            elevation: 0.1,
-            shadowColor: Colors.green.shade50,
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                children: [
-                  Flexible(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Free Consultation",
-                          style:
-                              Theme.of(context).textTheme.titleLarge!.copyWith(
-                                    color: Colors.green.shade700,
-                                  ),
-                        ),
-                        Text('Get free support from our customer service'),
-                        FilledButton(
-                          onPressed: () {},
-                          child: Text('Call now'),
-                        ),
-                      ],
+        Padding(
+          padding: const EdgeInsets.only(bottom: 15.0),
+          child: SizedBox(
+            height: 170,
+            child: Card(
+              color: Colors.green.shade50,
+              elevation: 0.1,
+              shadowColor: Colors.green.shade50,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
+                  children: [
+                    Flexible(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Free Consultation",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .copyWith(
+                                  color: Colors.green.shade700,
+                                ),
+                          ),
+                          const Text(
+                              'Get free support from our customer service'),
+                          FilledButton(
+                            onPressed: () {},
+                            child: const Text('Call now'),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Image.asset(
-                    'lib/assets/support.png',
-                    width: 75,
-                  ),
-                ],
+                    Image.asset(
+                      'lib/assets/support.png',
+                      width: 75,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
         ),
+        // Feature Product Start
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Feature Products',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text('See all'),
+            ),
+          ],
+        ),
+        // Feature Product End
+        GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 4,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 16,
+            ),
+            itemBuilder: (context, index) {
+              return const Card(
+                child: Text("Hi"),
+              );
+            })
       ],
     ));
   }
